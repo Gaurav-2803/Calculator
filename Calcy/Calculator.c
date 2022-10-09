@@ -21,8 +21,18 @@ void main(){
             case'*':  
                 printf("\nProduct = %d ",num1*num2);  
                 break;  
-            case '%':  
-                printf("\nRemainder = %d",num1%num2);   
+            case '%':
+                // num2 can NOT be zero for '%' operator also
+                // so we have to add similar check as we have for '/' operator
+                while(1){
+                    if(num2==0) {
+                        printf("\nNumber 2 can't be zero, Try again!!!");
+                        goto zero;
+                    } else {
+                        break;
+                    }
+                }
+                printf("\nRemainder = %d",num1%num2);
                 break;  
             case'/':  
                 while(1){  
